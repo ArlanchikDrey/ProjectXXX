@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ProjectXXX</string>
+    <string name="title_lenta">Вопросы</string>
+    <string name="title_users">Рейтинг</string>
+</resources>

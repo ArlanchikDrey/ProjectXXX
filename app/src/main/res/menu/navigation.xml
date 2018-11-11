@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item
+        android:id="@+id/navigation_main"
+        android:icon="@drawable/ic_filter_5_24dp"
+        android:title="@string/title_lenta" />
+
+    <item
+        android:id="@+id/navigation_rating"
+        android:icon="@drawable/ic_rating_24dp"
+        android:title="@string/title_users" />
+
+</menu>
