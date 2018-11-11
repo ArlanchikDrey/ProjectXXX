@@ -15,6 +15,8 @@ import com.example.projectxxx.RatingPackages.RatingMainFragment;
 
 public class MainActivity extends AppCompatActivity {
 
+    //коммент чисто для теста коммита
+
     private FragmentManager fragmentManager=getSupportFragmentManager();
 
     QuestionMainFragment questionMainFrag;  //фрагмент для основной ленты с вопросами
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.add(R.id.Frame_container,ratingMainFrag);
         fragmentTransaction.hide(ratingMainFrag);
         fragmentTransaction.commit();
+
 
 
         BottomNavigationView navigation =  findViewById(R.id.navigation);
