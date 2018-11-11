@@ -16,6 +16,8 @@ import com.example.projectxxx.RatingPackages.RatingMainFragment;
 public class MainActivity extends AppCompatActivity {
 
     //коммент чисто для теста коммита
+
+    
     private FragmentManager fragmentManager=getSupportFragmentManager();
 
     QuestionMainFragment questionMainFrag;  //фрагмент для основной ленты с вопросами
