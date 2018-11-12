@@ -1,21 +1,10 @@
 package com.example.projectxxx;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.support.v7.widget.Toolbar;
 
-import com.example.projectxxx.LoginPackages.WelcomeActivity;
-import com.example.projectxxx.QuestionPackages.QuestionMainFragment;
-import com.example.projectxxx.RatingPackages.RatingMainFragment;
-import com.google.firebase.auth.FirebaseUser;
+import com.example.projectxxx.fragments.FragmentMain;
 
 /**
  Документация и обозначения:
@@ -24,22 +13,29 @@ import com.google.firebase.auth.FirebaseUser;
  **/
 
 public class MainActivity  extends AppCompatActivity {
-     FirebaseUser  user;
+    //FirebaseUser  user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(user==null){
-            Intent intent=new Intent(MainActivity.this,WelcomeActivity.class);
-            startActivity(intent);
-            finish();
-        }else{
-            Intent intent=new Intent(MainActivity.this,MainActivitySecond.class);
-            startActivity(intent);
-            finish();
-        }
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
+        setSupportActionBar(toolbar);
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.frameLayout, FragmentMain.newInstance())
+                .commit();
+
+//        if(user==null){
+//            Intent intent=new Intent(MainActivity.this,WelcomeActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }else{
+//            Intent intent=new Intent(MainActivity.this,MainActivitySecond.class);
+//            startActivity(intent);
+//            finish();
+//        }
 
 
 
