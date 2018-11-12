@@ -1,6 +1,8 @@
 package com.example.projectxxx;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
@@ -10,70 +12,41 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.example.projectxxx.LoginPackages.WelcomeActivity;
 import com.example.projectxxx.QuestionPackages.QuestionMainFragment;
 import com.example.projectxxx.RatingPackages.RatingMainFragment;
+import com.google.firebase.auth.FirebaseUser;
+
+/**
+ Документация и обозначения:
+        user-пользователь
+ *
+ **/
 
 public class MainActivity extends AppCompatActivity {
-
-    //коммент чисто для теста коммита
-    //коммент чисто для теста коммита
-
-
-    private FragmentManager fragmentManager=getSupportFragmentManager();
-
-    QuestionMainFragment questionMainFrag;  //фрагмент для основной ленты с вопросами
-    RatingMainFragment   ratingMainFrag;   //фрагмент для рейтинга
-    FrameLayout frameLayout;
+     FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        frameLayout=findViewById(R.id.Frame_container);
-
-        questionMainFrag=new QuestionMainFragment(); //новый обьект
-        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.Frame_container,questionMainFrag);//Добавляем QuestionMainFragment к активности
-        //fragmentTransaction.hide(QuestionMainFragment);//Прячем фрагмент (делает невидимым на экране)
-        fragmentTransaction.commit();
-
-        ratingMainFrag=new RatingMainFragment(); //новый обьект
-        fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.Frame_container,ratingMainFrag);
-        fragmentTransaction.hide(ratingMainFrag);
-        fragmentTransaction.commit();
+        if(user==null){
+            Intent intent=new Intent(MainActivity.this,WelcomeActivity.class);
+            startActivity(intent);
+            finish();
+        }else{
+            Intent intent=new Intent(MainActivity.this,MainActivitySecond.class);
+            startActivity(intent);
+            finish();
+        }
 
 
 
-        BottomNavigationView navigation =  findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
     }
 
 
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_main:
-                    FragmentTransaction fragmentTransaction1=fragmentManager.beginTransaction();
-                    fragmentTransaction1.hide(ratingMainFrag);//скрываем
-                    fragmentTransaction1.show(questionMainFrag);
-                    fragmentTransaction1.commit();
-                    break;
-                case R.id.navigation_rating:
-                    fragmentTransaction1=fragmentManager.beginTransaction();
-                    fragmentTransaction1.hide(questionMainFrag);//скрываем
-                    fragmentTransaction1.show(ratingMainFrag);
-                    fragmentTransaction1.commit();
-                    break;
-            }
-            return true;
-        }
-    };
 
 
 }

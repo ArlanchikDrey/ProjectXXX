@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">ProjectXXX</string>
+
+    //кнопки
+    <string name="btn_next">Продолжить</string>
+
+    //BottomNavigation
     <string name="title_lenta">Вопросы</string>
     <string name="title_users">Рейтинг</string>
+
+    //Welcome
+    <string name="welcome">
+        Добро Пожаловать в \n
+        "     "ProjectXXX</string>
+
 </resources>

@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:screenOrientation="portrait"
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
@@ -18,6 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LoginPackages.WelcomeActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".MainActivitySecond"
+            android:screenOrientation="portrait" />
+        <activity android:name=".LoginPackages.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".LoginPackages.User"
+            android:screenOrientation="portrait" ></activity>
     </application>
 
 </manifest>
