@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.example.projectxxx.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends  AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

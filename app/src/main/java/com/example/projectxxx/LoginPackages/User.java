@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.example.projectxxx.R;
 
-public class User extends AppCompatActivity {
+public class User extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
